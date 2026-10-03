@@ -66,7 +66,7 @@ body {
     pointer-events: none;
 }
 
-/* Splash Screen (Fixed vertical centering) */
+/* Splash Screen (Prominent vertical stack & centering) */
 .splash-overlay {
     position: fixed;
     top: 0;
@@ -91,15 +91,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    gap: 30px;
     padding: 20px;
+    width: 100%;
 }
 
 .splash-logo {
-    width: 120px;
+    width: 140px;
     height: auto;
-    margin-bottom: 25px;
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.5));
 }
 
 .splash-title {
@@ -107,14 +109,13 @@ body {
     font-size: 1.8rem;
     color: var(--text-main);
     letter-spacing: 4px;
-    margin-bottom: 30px;
 }
 
 .enter-button {
     background: transparent;
     color: var(--gold);
     border: 2px solid var(--gold);
-    padding: 12px 30px;
+    padding: 14px 35px;
     font-family: var(--font-heading);
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -167,7 +168,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* Cyber / Glitch Hover Effect for Nav & Titles */
+/* Universal Cyber / Glitch Hover Effect */
 .glitch-hover {
     position: relative;
     display: inline-block;
@@ -185,21 +186,12 @@ body {
     pointer-events: none;
 }
 
-.main-nav a {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    color: var(--text-main);
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
+.glitch-hover:hover {
     color: var(--gold);
     text-shadow: 0 0 10px var(--gold-glow);
 }
 
-.main-nav a:hover::before {
+.glitch-hover:hover::before {
     opacity: 0.8;
     color: #00ffff;
     z-index: -1;
@@ -207,12 +199,21 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 }
 
-.main-nav a:hover::after {
+.glitch-hover:hover::after {
     opacity: 0.8;
     color: #ff00ff;
     z-index: -2;
     transform: translate(2px, -1px);
     clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+.main-nav a {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
 }
 
 .hero-socials {

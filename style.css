@@ -1,74 +1,528 @@
-/* Custom FME Radio Theme Player Styles */
-.fme-custom-player-box {
-    background: rgba(15, 15, 15, 0.7);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 12px;
-    padding: 30px;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+/* ==========================================
+   DJ SCOTT EBBZ LONDON - MAIN STYLESHEET
+   ========================================== */
+
+:root {
+    --bg-dark: #0a0a0a;
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --glass-bg: rgba(15, 15, 15, 0.75);
+    --glass-border: rgba(212, 175, 55, 0.25);
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    --font-heading: 'Syncopate', sans-serif;
+    --font-body: 'Work Sans', sans-serif;
 }
 
-.fme-player-header {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Background Canvas & Effects */
+#ambient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    pointer-events: none;
+}
+
+.chroma-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.vignette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Splash Screen */
+.splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    z-index: 9999;
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.splash-overlay.splash-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.splash-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.splash-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-main);
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.enter-button {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 12px 30px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.enter-button:hover {
+    background: var(--gold);
+    color: #000000;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Content Layout */
+.content-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 120px 20px;
+}
+
+/* Header & Navigation */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.logo-box {
     margin-bottom: 25px;
 }
 
-.fme-station-meta .station-tag {
-    font-family: 'Syncopate', sans-serif;
-    font-size: 0.75rem;
-    color: #d4af37;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.sel-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
 }
 
-.fme-station-meta .station-name {
-    font-family: 'Syncopate', sans-serif;
-    font-size: 1.25rem;
-    color: #ffffff;
-    margin: 5px 0 0 0;
-}
-
-.fme-controls-row {
+.main-nav ul {
+    list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.main-nav a {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.hero-socials {
+    display: flex;
     gap: 20px;
 }
 
-.fme-main-play-btn {
-    background: #d4af37;
+.hero-socials a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-socials a:hover {
+    color: var(--gold);
+    transform: scale(1.1);
+}
+
+/* Glass Containers & Sections */
+.info-section {
+    margin-bottom: 50px;
+}
+
+.glass-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease;
+}
+
+.glass-container:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.bio-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.bio-content p strong {
+    color: var(--text-main);
+}
+
+/* Music Players & Platform Buttons */
+.player-container {
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.platform-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.platform-btn {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.primary-platform {
+    background: var(--gold);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.primary-platform:hover {
+    background: #ffffff;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+.secondary-platform {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondary-platform:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* FME Radio Embedded Widget Styling */
+.fme-embedded-widget-wrapper {
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 12px;
+    padding: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.fme-embedded-widget-wrapper iframe {
+    border-radius: 8px;
+    background: transparent;
+}
+
+/* Upcoming Dates */
+.gig-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gig-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    gap: 15px;
+    transition: background 0.3s ease;
+}
+
+.gig-item:hover {
+    background: rgba(212, 175, 55, 0.05);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.gig-date {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.gig-venue {
+    font-size: 1rem;
+    color: var(--text-main);
+    flex-grow: 1;
+}
+
+.gig-btn {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.gig-btn:hover {
+    background: var(--gold);
+    color: #000000;
+}
+
+/* Booking Section */
+.booking-form {
+    text-align: center;
+}
+
+.booking-form p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.cta-button {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    background: var(--gold);
+    color: #000000;
+    padding: 15px 35px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+.footer-socials a {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--gold);
+}
+
+.main-footer p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* Persistent Bottom Audio Player Bar */
+.audio-player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    z-index: 999;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.8);
+    transition: transform 0.4s ease;
+}
+
+.audio-player-bar.hidden-bar {
+    transform: translateY(100%);
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.track-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: var(--text-main);
+}
+
+/* Equalizer Bars Animation */
+.eq-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 18px;
+    width: 20px;
+}
+
+.eq-bars span {
+    display: block;
+    width: 3px;
+    background: var(--gold);
+    height: 4px;
+    transition: height 0.2s ease;
+}
+
+.eq-bars.playing span:nth-child(1) { animation: bounce 0.6s infinite alternate; }
+.eq-bars.playing span:nth-child(2) { animation: bounce 0.4s infinite alternate; }
+.eq-bars.playing span:nth-child(3) { animation: bounce 0.7s infinite alternate; }
+.eq-bars.playing span:nth-child(4) { animation: bounce 0.5s infinite alternate; }
+
+@keyframes bounce {
+    0% { height: 4px; }
+    100% { height: 18px; }
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#bar-play-btn {
+    background: var(--gold);
     color: #000000;
     border: none;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    font-size: 1.2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-.fme-main-play-btn:hover {
-    background: #fff;
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+#bar-play-btn:hover {
+    background: #ffffff;
     transform: scale(1.05);
 }
 
-.fme-volume-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #d4af37;
+#bar-volume {
+    accent-color: var(--gold);
+    cursor: pointer;
+    width: 90px;
 }
 
-.fme-volume-wrapper input[type="range"] {
-    accent-color: #d4af37;
-    cursor: pointer;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-nav ul {
+        gap: 15px;
+    }
+    .glass-container {
+        padding: 25px;
+    }
+    .audio-player-bar {
+        padding: 12px 15px;
+    }
+    #bar-volume {
+        width: 60px;
+    }
 }

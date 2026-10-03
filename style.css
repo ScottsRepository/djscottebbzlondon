@@ -282,21 +282,106 @@ body {
     color: var(--gold);
 }
 
-/* FME Radio Embedded Widget Styling */
-.fme-embedded-widget-wrapper {
-    background: rgba(15, 15, 15, 0.85);
+/* Custom FME Radio Direct Player Card Styling */
+.fme-direct-player-card {
+    background: rgba(10, 10, 10, 0.85);
     border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 12px;
-    padding: 20px;
-    max-width: 580px;
+    padding: 35px 30px;
+    max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s ease;
 }
 
-.fme-embedded-widget-wrapper iframe {
-    border-radius: 8px;
-    background: transparent;
+.fme-direct-player-card:hover {
+    border-color: var(--gold);
+}
+
+.fme-live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ff3b30;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ff3b30;
+    animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.fme-station-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-main);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.station-sub {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.fme-action-box {
+    display: flex;
+    justify-content: center;
+}
+
+.fme-play-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--gold);
+    color: #000000;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    padding: 16px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+}
+
+.fme-play-trigger-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+    transform: translateY(-2px);
+}
+
+.play-icon-circle {
+    width: 32px;
+    height: 32px;
+    background: #000000;
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+.fme-play-trigger-btn:hover .play-icon-circle {
+    transform: scale(1.1);
 }
 
 /* Upcoming Dates */

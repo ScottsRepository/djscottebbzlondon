@@ -1,0 +1,531 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Work Sans', sans-serif;
+    color: #ffffff;
+    background-color: #050505;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ==========================================
+   BACKGROUNDS & CANVAS
+   ========================================== */
+#ambient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+    background: transparent;
+}
+
+.chroma-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, #1a0033 0%, #000000 80%), url('images/chroma-bg.jpg') center/cover no-repeat;
+    background-blend-mode: overlay;
+    z-index: -3;
+}
+
+.vignette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.85) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ==========================================
+   SPLASH SCREEN
+   ========================================== */
+.splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splash-overlay.splash-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.splash-logo {
+    max-width: 180px;
+    width: 50vw;
+    height: auto;
+}
+
+.splash-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.enter-button {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #ffffff;
+    padding: 14px 32px;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enter-button:hover {
+    background: #d4af37;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+/* ==========================================
+   MAIN CONTENT LAYOUT
+   ========================================== */
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px 100px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* HERO SECTION */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 50px 0;
+}
+
+.logo-box .sel-logo {
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #d4af37;
+}
+
+.hero-socials, .footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-socials a, .footer-socials a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-socials a:hover, .footer-socials a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* GLASS CONTAINERS */
+.info-section {
+    margin-bottom: 40px;
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 35px;
+}
+
+.glow-border {
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.glow-border:hover {
+    border-color: rgba(212, 175, 55, 0.8) !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+}
+
+.section-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #d4af37;
+}
+
+/* BIO STYLES */
+.bio-content p {
+    line-height: 1.7;
+    color: #dddddd;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.bio-content p:last-child {
+    margin-bottom: 0;
+}
+
+.bio-content strong {
+    color: #ffffff;
+}
+
+/* MUSIC & PLATFORMS */
+.player-container {
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.platform-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.platform-btn {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primary-platform {
+    background: #d4af37;
+    color: #000000;
+    font-weight: 600;
+}
+
+.primary-platform:hover {
+    background: #b59226;
+}
+
+.secondary-platform {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.secondary-platform:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* GIGS */
+.gig-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gig-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border-left: 3px solid #d4af37;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gig-date {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    color: #d4af37;
+}
+
+.gig-venue {
+    color: #dddddd;
+}
+
+.gig-btn {
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.gig-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* BOOKING CTA */
+.booking-form {
+    text-align: center;
+}
+
+.booking-form p {
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #d4af37;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #b59226;
+}
+
+/* FOOTER */
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666666;
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   GLITCH EFFECT & AUDIO BAR
+   ========================================== */
+.glitch-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-hover:hover::before,
+.glitch-hover:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 0, 0, 0);
+}
+
+.glitch-hover:hover::before {
+    left: -2px;
+    text-shadow: 2px 0 #d4af37;
+    animation: glitch-anim-1 0.6s infinite linear alternate-reverse;
+}
+
+.glitch-hover:hover::after {
+    left: 2px;
+    text-shadow: -2px 0 #ffaa00;
+    animation: glitch-anim-2 0.6s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip: rect(10px, 9999px, 30px, 0); }
+    20% { clip: rect(40px, 9999px, 10px, 0); }
+    40% { clip: rect(25px, 9999px, 50px, 0); }
+    60% { clip: rect(5px, 9999px, 20px, 0); }
+    80% { clip: rect(35px, 9999px, 15px, 0); }
+    100% { clip: rect(15px, 9999px, 45px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(30px, 9999px, 10px, 0); }
+    20% { clip: rect(15px, 9999px, 45px, 0); }
+    40% { clip: rect(5px, 9999px, 20px, 0); }
+    60% { clip: rect(40px, 9999px, 10px, 0); }
+    80% { clip: rect(20px, 9999px, 35px, 0); }
+    100% { clip: rect(50px, 9999px, 5px, 0); }
+}
+
+.audio-player-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 30px;
+    padding: 10px 20px;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.audio-player-bar.hidden-bar {
+    opacity: 0;
+    transform: translateY(30px);
+    pointer-events: none;
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.track-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.75rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#bar-play-btn {
+    background: #d4af37;
+    border: none;
+    color: #000000;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#bar-play-btn:hover {
+    transform: scale(1.1);
+    background: #b59226;
+}
+
+#bar-volume {
+    width: 70px;
+    accent-color: #d4af37;
+    cursor: pointer;
+}
+
+.eq-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 16px;
+}
+
+.eq-bars span {
+    width: 3px;
+    height: 100%;
+    background: #d4af37;
+    border-radius: 2px;
+    transform-origin: bottom;
+}
+
+.eq-bars.playing span:nth-child(1) { animation: eq-bounce 0.8s infinite ease-in-out; }
+.eq-bars.playing span:nth-child(2) { animation: eq-bounce 0.6s infinite ease-in-out 0.2s; }
+.eq-bars.playing span:nth-child(3) { animation: eq-bounce 0.9s infinite ease-in-out 0.1s; }
+.eq-bars.playing span:nth-child(4) { animation: eq-bounce 0.7s infinite ease-in-out 0.3s; }
+
+@keyframes eq-bounce {
+    0%, 100% { transform: scaleY(0.2); }
+    50% { transform: scaleY(1); }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    .main-nav ul {
+        gap: 15px;
+    }
+    .main-nav a {
+        font-size: 0.75rem;
+    }
+    .glass-container {
+        padding: 20px;
+    }
+    .gig-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .audio-player-bar {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+    }
+}

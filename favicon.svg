@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Dark background -->
+  <rect width="512" height="512" fill="#0a0a0a"/>
+  <!-- Gold Border Frame -->
+  <rect x="24" y="24" width="464" height="464" fill="none" stroke="#d4af37" stroke-width="16"/>
+  <!-- Bold SEL Monogram text -->
+  <text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle" fill="#d4af37" font-family="'Syncopate', 'Arial Black', sans-serif" font-weight="700" font-size="160" letter-spacing="-8">SEL</text>
+</svg>

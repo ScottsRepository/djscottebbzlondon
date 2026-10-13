@@ -3,12 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ Scott Ebbz London — Mixes Archive</title>
+    <title>DJ Scott Ebbz London - Mixes Archive</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Dedicated Mixes Carousel Styling */
+        .mixes-header-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .mixes-carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mixes-track-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .mixes-track {
+            display: flex;
+            transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+        }
+
+        .mixes-slide {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        .mixes-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(10, 10, 10, 0.85);
+            border: 2px solid var(--amber-primary);
+            color: var(--amber-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 50;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        .mixes-nav-btn:hover {
+            background: var(--amber-primary);
+            color: var(--bg-obsidian);
+            box-shadow: 0 0 25px var(--amber-glow);
+        }
+
+        .mixes-prev { left: -22px; }
+        .mixes-next { right: -22px; }
+
+        .mixes-dots {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mixes-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .mixes-dot.active {
+            background: var(--amber-primary);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px var(--amber-glow);
+        }
+
+        @media (max-width: 768px) {
+            .mixes-prev { left: -5px; }
+            .mixes-next { right: -5px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -27,151 +122,184 @@
                     <img src="images/logo.png" alt="DJ Scott Ebbz London" class="sel-logo">
                 </a>
             </div>
+            
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="glitch-hover" data-text="HOME">HOME</a></li>
-                    <li><a href="index.html#bio" class="glitch-hover" data-text="BIO">BIO</a></li>
-                    <li><a href="mixes.html" class="glitch-hover" data-text="ALL MIXES">ALL MIXES</a></li>
-                    <li><a href="index.html#fme-radio" class="glitch-hover" data-text="FME RADIO">FME RADIO</a></li>
-                    <li><a href="index.html#dates" class="glitch-hover" data-text="DATES">DATES</a></li>
-                    <li><a href="index.html#booking" class="glitch-hover" data-text="BOOKING">BOOKING</a></li>
+                    <li><a href="index.html#bio">BIO</a></li>
+                    <li><a href="index.html#chp-spotlight">CHP</a></li>
+                    <li><a href="mixes.html" class="active-nav">MIXES</a></li>
+                    <li><a href="index.html#fme-radio">FME RADIO</a></li>
+                    <li><a href="index.html#dates">DATES</a></li>
+                    <li><a href="index.html#booking">BOOKING</a></li>
                 </ul>
             </nav>
+
             <div class="hero-socials">
-                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" aria-label="Mixcloud" class="glitch-hover" data-text=""><i class="fa-brands fa-mixcloud"></i></a>
-                <a href="https://soundcloud.com" target="_blank" aria-label="SoundCloud" class="glitch-hover" data-text=""><i class="fa-brands fa-soundcloud"></i></a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="glitch-hover" data-text=""><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="glitch-hover" data-text=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" aria-label="Mixcloud"><i class="fa-brands fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com" target="_blank" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
         </header>
 
-        <!-- Mixes Showcase Section -->
+        <!-- Mixes Header -->
+        <section class="mixes-header-section">
+            <h2 class="section-title">MIXCLOUD ARCHIVE</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; letter-spacing: 1px;">
+                Explore recorded live sets, radio broadcasts, and studio sessions from DJ Scott Ebbz London.
+            </p>
+        </section>
+
+        <!-- Mixes Carousel Section inside Glass Container -->
         <section class="info-section">
             <div class="glass-container glow-border">
-                <h1 class="section-title glitch-hover" data-text="DJ SCOTT EBBZ LONDON'S MIXES">DJ SCOTT EBBZ LONDON'S MIXES</h1>
-                <div class="bio-content" style="text-align: center; margin-bottom: 35px;">
-                    <p>Explore the complete archive of live sets, radio broadcasts, and genre-spanning studio mixes from <strong>DJ Scott Ebbz London</strong>.</p>
-                </div>
-
-                <div class="mixes-grid">
+                
+                <div class="mixes-carousel-container">
+                    <button class="mixes-nav-btn mixes-prev" id="mix-prev-btn" aria-label="Previous Mix"><i class="fa-solid fa-chevron-left"></i></button>
                     
-                    <!-- Mix 1 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="2 Hours of House">2 Hours of House</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2F2-hours-of-house-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                    <div class="mixes-track-wrapper">
+                        <div class="mixes-track" id="mixes-track">
+                            
+                            <!-- Slide 1 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">2 HOURS OF HOUSE</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2F2-hours-of-house-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">FME RADIO HASTINGS: THE HASTINGS HOUSE PARTY</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ffme-radio-hastings-the-hastings-house-party-episode-one%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">UKG & TECH HOUSE MIX</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Fukg-tech-house-mix-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">CYBER HOUSE PARTY (FEB 2026)</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FCyberHouseParty%2Fthis-is-what-we-do-feb-2026-ft-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 5 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">EBBZ N GEM DRUM N BASS MIX</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Febbz-n-gem-back-2-back-drum-n-bass-mix%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 6 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">TJ LAWTON'S TOP 10 TRACKS</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ftj-lawtons-top-10-tracks-mixed-by-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 7 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">MARTIN IKIN TOP 10 TRACKS</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Fmartin-ikin-top-10-tracks-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 8 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">FRIDAY SESSIONS</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ffriday-sessions-with-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 9 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">FOOL'S PARADISE HOMAGE (APRIL 2026)</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ffools-paradise-homage-fabris-18-april-2026-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 10 -->
+                            <div class="mixes-slide">
+                                <div class="mix-block" style="margin: 0; background: transparent; border: none; padding: 0;">
+                                    <h3 class="mix-title">STRAWBS PEACHES MIX (NOV 2025)</h3>
+                                    <div class="player-container">
+                                        <iframe width="100%" height="180" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Fstrawbs-peaches-mix-fabirc-nov-2025%2F" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Mix 2 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="FME Radio Hastings: The Hastings House Party - Episode One">FME Radio Hastings: The Hastings House Party — Episode One</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ffme-radio-hastings-the-hastings-house-party-episode-one%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 3 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="UKG & Tech House Mix">UKG & Tech House Mix</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Fukg-tech-house-mix-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 4 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="Cyber House Party: This Is What We Do (Feb 2026 ft. DJ Scott Ebbz London)">Cyber House Party: This Is What We Do (Feb 2026 ft. DJ Scott Ebbz London)</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FCyberHouseParty%2Fthis-is-what-we-do-feb-2026-ft-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 5 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="Ebbz N Gem Back 2 Back Drum N Bass Mix">Ebbz N Gem Back 2 Back Drum N Bass Mix</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2febbz-n-gem-back-2-back-drum-n-bass-mix%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 6 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="TJ Lawton's Top 10 Tracks Mixed by DJ Scott Ebbz London">TJ Lawton's Top 10 Tracks Mixed by DJ Scott Ebbz London</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ftj-lawtons-top-10-tracks-mixed-by-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 7 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="Martin Ikin Top 10 Tracks DJ Scott Ebbz London">Martin Ikin Top 10 Tracks — DJ Scott Ebbz London</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Fmartin-ikin-top-10-tracks-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 8 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="Friday Sessions with DJ Scott Ebbz London">Friday Sessions with DJ Scott Ebbz London</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Ffriday-sessions-with-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 9 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="Fool's Paradise Homage Fabric 18 April 2026">Fool's Paradise Homage Fabric 18 April 2026 — DJ Scott Ebbz London</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2ffools-paradise-homage-fabris-18-april-2026-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Mix 10 -->
-                    <div class="mix-card">
-                        <h3 class="mix-title glitch-hover" data-text="Strawbs Peaches Mix Fabric Nov 2025">Strawbs Peaches Mix Fabric Nov 2025</h3>
-                        <div class="player-container">
-                            <iframe width="100%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2Fstrawbs-peaches-mix-fabirc-nov-2025%2F" frameborder="0"></iframe>
-                        </div>
-                    </div>
-
+                    <button class="mixes-nav-btn mixes-next" id="mix-next-btn" aria-label="Next Mix"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
 
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="index.html" class="cta-button glitch-hover" data-text="BACK TO HOME">BACK TO HOME</a>
+                <div class="mixes-dots" id="mixes-dots">
+                    <button class="mixes-dot active" data-index="0"></button>
+                    <button class="mixes-dot" data-index="1"></button>
+                    <button class="mixes-dot" data-index="2"></button>
+                    <button class="mixes-dot" data-index="3"></button>
+                    <button class="mixes-dot" data-index="4"></button>
+                    <button class="mixes-dot" data-index="5"></button>
+                    <button class="mixes-dot" data-index="6"></button>
+                    <button class="mixes-dot" data-index="7"></button>
+                    <button class="mixes-dot" data-index="8"></button>
+                    <button class="mixes-dot" data-index="9"></button>
                 </div>
+
+                <div class="platform-links" style="margin-top: 35px; justify-content: center;">
+                    <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" class="platform-btn primary-platform">
+                        <i class="fa-brands fa-mixcloud"></i> VIEW FULL PROFILE ON MIXCLOUD
+                    </a>
+                </div>
+
             </div>
         </section>
 
         <!-- Footer -->
         <footer class="main-footer">
             <div class="footer-socials">
-                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-mixcloud"></i></a>
-                <a href="https://soundcloud.com" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-soundcloud"></i></a>
-                <a href="https://instagram.com" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank"><i class="fa-brands fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
             <p>&copy; 2026 DJ Scott Ebbz London. All Rights Reserved.</p>
         </footer>
 
     </div>
-
-    <!-- Persistent Audio Player Bar -->
-    <div id="audio-bar" class="audio-player-bar">
-        <div class="audio-info">
-            <div class="eq-bars" id="eq-indicator">
-                <span></span><span></span><span></span><span></span>
-            </div>
-            <span class="track-title glitch-hover" data-text="SCOTT EBBZ LIVE">SCOTT EBBZ LIVE</span>
-        </div>
-        <div class="audio-controls">
-            <button id="bar-play-btn" aria-label="Play or Pause" class="glitch-hover" data-text=""><i class="fa-solid fa-play"></i></button>
-            <input type="range" id="bar-volume" min="0" max="1" step="0.05" value="0.8">
-        </div>
-    </div>
-
-    <!-- Intro Audio -->
-    <audio id="bg-audio" src="audiointro.mp3.mp3" preload="auto"></audio>
 
     <script>
         // Ambient Canvas Background
@@ -196,7 +324,7 @@
 
         function animateCanvas() {
             ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+            ctx.fillStyle = 'rgba(255, 199, 44, 0.4)';
             
             particles.forEach(p => {
                 ctx.beginPath();
@@ -215,40 +343,36 @@
         initCanvas();
         animateCanvas();
 
-        // Audio controls for persistent bar
-        const bgAudio = document.getElementById('bg-audio');
-        const barPlayBtn = document.getElementById('bar-play-btn');
-        const barVolume = document.getElementById('bar-volume');
-        const eqIndicator = document.getElementById('eq-indicator');
+        // Mixes Carousel Logic
+        const mixesTrack = document.getElementById('mixes-track');
+        const mixesSlides = document.querySelectorAll('.mixes-slide');
+        const mixNextBtn = document.getElementById('mix-next-btn');
+        const mixPrevBtn = document.getElementById('mix-prev-btn');
+        const mixesDots = document.querySelectorAll('.mixes-dot');
+        let currentMixIndex = 0;
 
-        barPlayBtn.addEventListener('click', () => {
-            if (bgAudio.paused) {
-                bgAudio.play().then(() => updatePlayState(true)).catch(() => updatePlayState(false));
-            } else {
-                bgAudio.pause();
-                updatePlayState(false);
-            }
-        });
+        function updateMixesCarousel(index) {
+            if (index < 0) index = mixesSlides.length - 1;
+            if (index >= mixesSlides.length) index = 0;
+            currentMixIndex = index;
 
-        bgAudio.addEventListener('ended', () => {
-            updatePlayState(false);
-        });
+            mixesTrack.style.transform = `translateX(-${currentMixIndex * 100}%)`;
 
-        barVolume.addEventListener('input', (e) => {
-            bgAudio.volume = e.target.value;
-        });
-
-        function updatePlayState(isPlaying) {
-            if (isPlaying) {
-                barPlayBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-                barPlayBtn.setAttribute('data-text', '');
-                eqIndicator.classList.add('playing');
-            } else {
-                barPlayBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                barPlayBtn.setAttribute('data-text', '');
-                eqIndicator.classList.remove('playing');
-            }
+            mixesDots.forEach((dot, idx) => {
+                if (idx === currentMixIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
         }
+
+        mixNextBtn.addEventListener('click', () => updateMixesCarousel(currentMixIndex + 1));
+        mixPrevBtn.addEventListener('click', () => updateMixesCarousel(currentMixIndex - 1));
+
+        mixesDots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => updateMixesCarousel(idx));
+        });
     </script>
 </body>
 </html>

@@ -22,8 +22,8 @@
         <div class="splash-bg-image"></div>
         <div class="splash-content">
             <img src="images/logo.png" alt="DJ Scott Ebbz London" class="splash-logo">
-            <h1 class="splash-title glitch-hover" data-text="SCOTT EBBZ LONDON">SCOTT EBBZ LONDON</h1>
-            <button id="enter-btn" class="enter-button glitch-hover" data-text="ENTER THE REALM">ENTER THE REALM</button>
+            <h1 class="splash-title">SCOTT EBBZ LONDON</h1>
+            <button id="enter-btn" class="enter-button">ENTER THE REALM</button>
         </div>
     </div>
 
@@ -40,28 +40,281 @@
             <div class="logo-box">
                 <img src="images/logo.png" alt="DJ Scott Ebbz London" class="sel-logo">
             </div>
+            
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="glitch-hover" data-text="HOME">HOME</a></li>
-                    <li><a href="#bio" class="glitch-hover" data-text="BIO">BIO</a></li>
-                    <li><a href="mixes.html" class="glitch-hover" data-text="ALL MIXES">ALL MIXES</a></li>
-                    <li><a href="#fme-radio" class="glitch-hover" data-text="FME RADIO">FME RADIO</a></li>
-                    <li><a href="#dates" class="glitch-hover" data-text="DATES">DATES</a></li>
-                    <li><a href="#booking" class="glitch-hover" data-text="BOOKING">BOOKING</a></li>
+                    <li><a href="#bio">BIO</a></li>
+                    <li><a href="#chp-spotlight">CHP</a></li>
+                    <li><a href="mixes.html">MIXES</a></li>
+                    <li><a href="#fme-radio">FME RADIO</a></li>
+                    <li><a href="#dates">DATES</a></li>
+                    <li><a href="#booking">BOOKING</a></li>
                 </ul>
             </nav>
+
             <div class="hero-socials">
-                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" aria-label="Mixcloud" class="glitch-hover" data-text=""><i class="fa-brands fa-mixcloud"></i></a>
-                <a href="https://soundcloud.com" target="_blank" aria-label="SoundCloud" class="glitch-hover" data-text=""><i class="fa-brands fa-soundcloud"></i></a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="glitch-hover" data-text=""><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="glitch-hover" data-text=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" aria-label="Mixcloud"><i class="fa-brands fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com" target="_blank" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
         </header>
+
+        <!-- ==========================================================================
+             3D OPEN FLIGHTCASE RECORD CRATE WITH ARTWORK SLEEVES
+             ========================================================================== -->
+        <section class="crate-section-wrapper">
+            <h2 class="crate-instruction-title">CRATE DIGGING — HOVER OR SCROLL TO FLIP RECORDS</h2>
+
+            <div class="crate-stage-container">
+                
+                <!-- Left Vertical Scroll Control -->
+                <div class="crate-vertical-scroll-track" id="crate-scroll-bar">
+                    <div class="scroll-arrow scroll-up"><i class="fa-solid fa-chevron-up"></i></div>
+                    <div class="scroll-thumb-rail">
+                        <div class="scroll-thumb" id="scroll-thumb"></div>
+                    </div>
+                    <div class="scroll-arrow scroll-down"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+
+                <!-- 3D Open Flightcase Box Structure -->
+                <div class="flightcase-3d-crate" id="crate-bay">
+                    
+                    <!-- Flightcase Rear Inside Wall & Interior Depth -->
+                    <div class="crate-interior-back"></div>
+
+                    <!-- 6 Vinyl Records Stacked Front-to-Back Inside Crate -->
+                    <div class="crate-records-stack">
+
+                        <!-- Record 1: BIO -->
+                        <a href="#bio" class="stacked-record-sleeve" style="--index: 0;">
+                            <div class="sleeve-card">
+                                <svg class="sleeve-svg-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <radialGradient id="bio-bg" cx="50%" cy="50%" r="70%">
+                                            <stop offset="0%" stop-color="#1a2639"/>
+                                            <stop offset="60%" stop-color="#0b101d"/>
+                                            <stop offset="100%" stop-color="#03050a"/>
+                                        </radialGradient>
+                                        <radialGradient id="bio-glow" cx="50%" cy="40%" r="40%">
+                                            <stop offset="0%" stop-color="#ff0055" stop-opacity="0.8"/>
+                                            <stop offset="100%" stop-color="#ff0055" stop-opacity="0"/>
+                                        </radialGradient>
+                                        <linearGradient id="bio-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#ffe259"/>
+                                            <stop offset="100%" stop-color="#ffa751"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="500" height="500" fill="url(#bio-bg)"/>
+                                    <circle cx="250" cy="180" r="160" fill="url(#bio-glow)"/>
+                                    <circle cx="250" cy="180" r="130" fill="none" stroke="#00f3ff" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.6"/>
+                                    <circle cx="250" cy="180" r="100" fill="none" stroke="url(#bio-gold)" stroke-width="2"/>
+                                    <g transform="translate(250, 170) scale(1.0)" text-anchor="middle">
+                                        <path d="M-20,-30 C-10,-45 10,-45 20,-30 C30,-15 25,10 0,30 C-25,10 -30,-15 -20,-30 Z" fill="none" stroke="#00f3ff" stroke-width="3"/>
+                                        <circle cx="0" cy="-10" r="18" fill="url(#bio-gold)"/>
+                                        <path d="M-35,40 C-20,20 20,20 35,40 C20,60 -20,60 -35,40 Z" fill="none" stroke="#ff0055" stroke-width="2"/>
+                                    </g>
+                                    <rect x="0" y="350" width="500" height="150" fill="#050811" opacity="0.96"/>
+                                    <line x1="0" y1="350" x2="500" y2="350" stroke="url(#bio-gold)" stroke-width="3"/>
+                                    <text x="25" y="380" font-family="'Syncopate', sans-serif" font-weight="700" font-size="11" fill="#00f3ff" letter-spacing="2">SCOTT-001 // STEREO</text>
+                                    <text x="25" y="420" font-family="'Syncopate', sans-serif" font-weight="700" font-size="24" fill="#ffffff" letter-spacing="2">BIOGRAPHY</text>
+                                    <text x="25" y="455" font-family="'Work Sans', sans-serif" font-weight="600" font-size="11" fill="#ffa751" letter-spacing="1">DJ SCOTT EBBZ LONDON — ORIGIN STORY</text>
+                                    <circle cx="250" cy="250" r="235" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.04"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- Record 2: CHP -->
+                        <a href="#chp-spotlight" class="stacked-record-sleeve" style="--index: 1;">
+                            <div class="sleeve-card">
+                                <svg class="sleeve-svg-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="chp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#080015"/>
+                                            <stop offset="50%" stop-color="#15002a"/>
+                                            <stop offset="100%" stop-color="#030008"/>
+                                        </linearGradient>
+                                        <linearGradient id="chp-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#00f2fe"/>
+                                            <stop offset="100%" stop-color="#4facfe"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="500" height="500" fill="url(#chp-bg)"/>
+                                    <g stroke="url(#chp-cyan)" stroke-width="1" opacity="0.15">
+                                        <line x1="50" y1="0" x2="50" y2="500"/><line x1="100" y1="0" x2="100" y2="500"/>
+                                        <line x1="150" y1="0" x2="150" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/>
+                                        <line x1="250" y1="0" x2="250" y2="500"/><line x1="300" y1="0" x2="300" y2="500"/>
+                                        <line x1="350" y1="0" x2="350" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+                                        <line x1="450" y1="0" x2="450" y2="500"/>
+                                    </g>
+                                    <g transform="translate(250, 175) scale(1.15)" text-anchor="middle">
+                                        <path d="M0,-80 L65,-40 L65,35 L0,75 L-65,35 L-65,-40 Z" fill="none" stroke="url(#chp-cyan)" stroke-width="3"/>
+                                        <path d="M0,-65 L50,-30 L50,25 L0,55 L-50,25 L-50,-30 Z" fill="#00f2fe" opacity="0.1"/>
+                                        <path d="M-25,-10 L0,-35 L25,-10 L0,15 Z" fill="none" stroke="#ff00a0" stroke-width="3"/>
+                                        <circle cx="0" cy="-10" r="6" fill="#ff00a0"/>
+                                    </g>
+                                    <rect x="0" y="350" width="500" height="150" fill="#090017" opacity="0.96"/>
+                                    <line x1="0" y1="350" x2="500" y2="350" stroke="#ff00a0" stroke-width="3"/>
+                                    <text x="25" y="380" font-family="'Syncopate', sans-serif" font-weight="700" font-size="11" fill="#ff00a0" letter-spacing="2">SCOTT-002 // SPECIAL EDITION</text>
+                                    <text x="25" y="420" font-family="'Syncopate', sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="1.5">CYBER HOUSE PARTY</text>
+                                    <text x="25" y="455" font-family="'Work Sans', sans-serif" font-weight="600" font-size="11" fill="#00f2fe" letter-spacing="1">CHARITY & COMMUNITY MOVEMENT</text>
+                                    <circle cx="250" cy="250" r="235" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.04"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- Record 3: MIXES -->
+                        <a href="mixes.html" class="stacked-record-sleeve" style="--index: 2;">
+                            <div class="sleeve-card">
+                                <svg class="sleeve-svg-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="mix-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#1f0008"/>
+                                            <stop offset="50%" stop-color="#0a0003"/>
+                                            <stop offset="100%" stop-color="#000000"/>
+                                        </linearGradient>
+                                        <linearGradient id="mix-amber" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#ff8c00"/>
+                                            <stop offset="100%" stop-color="#ff0055"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="500" height="500" fill="url(#mix-bg)"/>
+                                    <g transform="translate(250,180)">
+                                        <circle cx="0" cy="0" r="130" fill="none" stroke="#330010" stroke-width="2"/>
+                                        <circle cx="0" cy="0" r="100" fill="none" stroke="#55001a" stroke-width="2"/>
+                                        <circle cx="0" cy="0" r="75" fill="none" stroke="url(#mix-amber)" stroke-width="3"/>
+                                        <path d="M-110,0 Q-55,-45 0,0 T110,0" fill="none" stroke="#ff8c00" stroke-width="4" opacity="0.8"/>
+                                        <path d="M-110,0 Q-55,45 0,0 T110,0" fill="none" stroke="#ff0055" stroke-width="4" opacity="0.8"/>
+                                        <circle cx="0" cy="0" r="22" fill="url(#mix-amber)"/>
+                                    </g>
+                                    <rect x="0" y="350" width="500" height="150" fill="#0d0004" opacity="0.96"/>
+                                    <line x1="0" y1="350" x2="500" y2="350" stroke="#ff8c00" stroke-width="3"/>
+                                    <text x="25" y="380" font-family="'Syncopate', sans-serif" font-weight="700" font-size="11" fill="#ff0055" letter-spacing="2">SCOTT-003 // MIXCLOUD ARCHIVE</text>
+                                    <text x="25" y="420" font-family="'Syncopate', sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="2">DJ MIXES & SETS</text>
+                                    <text x="25" y="455" font-family="'Work Sans', sans-serif" font-weight="600" font-size="11" fill="#ff8c00" letter-spacing="1">HOUSE, TECHNO & DRUM AND BASS</text>
+                                    <circle cx="250" cy="250" r="235" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.04"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- Record 4: FME RADIO -->
+                        <a href="#fme-radio" class="stacked-record-sleeve" style="--index: 3;">
+                            <div class="sleeve-card">
+                                <svg class="sleeve-svg-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <radialGradient id="fme-bg" cx="50%" cy="50%" r="75%">
+                                            <stop offset="0%" stop-color="#2a1a00"/>
+                                            <stop offset="70%" stop-color="#0f0900"/>
+                                            <stop offset="100%" stop-color="#000000"/>
+                                        </radialGradient>
+                                        <linearGradient id="fme-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#ffea00"/>
+                                            <stop offset="100%" stop-color="#ff9100"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="500" height="500" fill="url(#fme-bg)"/>
+                                    <g transform="translate(250,175)">
+                                        <circle cx="0" cy="0" r="25" fill="none" stroke="url(#fme-yellow)" stroke-width="4"/>
+                                        <path d="M-45,-45 A65,65 0 0,1 45,-45" fill="none" stroke="#ffea00" stroke-width="3" opacity="0.9"/>
+                                        <path d="M-75,-75 A100,100 0 0,1 75,-75" fill="none" stroke="#ffea00" stroke-width="3" opacity="0.6"/>
+                                        <path d="M-100,-100 A135,135 0 0,1 100,-100" fill="none" stroke="#ffea00" stroke-width="3" opacity="0.3"/>
+                                        <circle cx="0" cy="0" r="10" fill="#ffea00"/>
+                                    </g>
+                                    <rect x="0" y="350" width="500" height="150" fill="#0a0600" opacity="0.96"/>
+                                    <line x1="0" y1="350" x2="500" y2="350" stroke="#ffea00" stroke-width="3"/>
+                                    <text x="25" y="380" font-family="'Syncopate', sans-serif" font-weight="700" font-size="11" fill="#ffea00" letter-spacing="2">SCOTT-004 // LIVE BROADCAST</text>
+                                    <text x="25" y="420" font-family="'Syncopate', sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="1.5">FME RADIO HASTINGS</text>
+                                    <text x="25" y="455" font-family="'Work Sans', sans-serif" font-weight="600" font-size="11" fill="#ff9100" letter-spacing="1">THE HASTINGS HOUSE PARTY — FRIDAYS 9-11PM</text>
+                                    <circle cx="250" cy="250" r="235" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.04"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- Record 5: DATES -->
+                        <a href="#dates" class="stacked-record-sleeve" style="--index: 4;">
+                            <div class="sleeve-card">
+                                <svg class="sleeve-svg-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="date-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#001f1d"/>
+                                            <stop offset="50%" stop-color="#000b0a"/>
+                                            <stop offset="100%" stop-color="#000000"/>
+                                        </linearGradient>
+                                        <linearGradient id="date-green" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#00ffe1"/>
+                                            <stop offset="100%" stop-color="#00b894"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="500" height="500" fill="url(#date-bg)"/>
+                                    <g transform="translate(250,175)" text-anchor="middle">
+                                        <rect x="-90" y="-70" width="180" height="140" rx="10" fill="none" stroke="url(#date-green)" stroke-width="3"/>
+                                        <line x1="-90" y1="-25" x2="90" y2="-25" stroke="#00ffe1" stroke-width="2"/>
+                                        <circle cx="-45" cy="-48" r="7" fill="#00ffe1"/>
+                                        <circle cx="45" cy="-48" r="7" fill="#00ffe1"/>
+                                        <text x="0" y="30" font-family="'Syncopate', sans-serif" font-weight="700" font-size="42" fill="#ffffff" letter-spacing="2">2026</text>
+                                    </g>
+                                    <rect x="0" y="350" width="500" height="150" fill="#000807" opacity="0.96"/>
+                                    <line x1="0" y1="350" x2="500" y2="350" stroke="#00ffe1" stroke-width="3"/>
+                                    <text x="25" y="380" font-family="'Syncopate', sans-serif" font-weight="700" font-size="11" fill="#00ffe1" letter-spacing="2">SCOTT-005 // TOUR SCHEDULE</text>
+                                    <text x="25" y="420" font-family="'Syncopate', sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="2">UPCOMING DATES</text>
+                                    <text x="25" y="455" font-family="'Work Sans', sans-serif" font-weight="600" font-size="11" fill="#00b894" letter-spacing="1">LIVE SHOWS, FESTIVALS & RESIDENCIES</text>
+                                    <circle cx="250" cy="250" r="235" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.04"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- Record 6: BOOKING -->
+                        <a href="#booking" class="stacked-record-sleeve" style="--index: 5;">
+                            <div class="sleeve-card">
+                                <svg class="sleeve-svg-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="book-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#1d002c"/>
+                                            <stop offset="50%" stop-color="#0a000f"/>
+                                            <stop offset="100%" stop-color="#000000"/>
+                                        </linearGradient>
+                                        <linearGradient id="book-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#d100d1"/>
+                                            <stop offset="100%" stop-color="#7b00ff"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="500" height="500" fill="url(#book-bg)"/>
+                                    <g transform="translate(250,175)">
+                                        <path d="M-80,-50 L80,-50 L80,50 L-80,50 Z" fill="none" stroke="url(#book-purple)" stroke-width="3"/>
+                                        <path d="M-80,-50 L0,12 L80,-50" fill="none" stroke="#d100d1" stroke-width="3"/>
+                                        <circle cx="0" cy="12" r="8" fill="#7b00ff"/>
+                                    </g>
+                                    <rect x="0" y="350" width="500" height="150" fill="#07000b" opacity="0.96"/>
+                                    <line x1="0" y1="350" x2="500" y2="350" stroke="#d100d1" stroke-width="3"/>
+                                    <text x="25" y="380" font-family="'Syncopate', sans-serif" font-weight="700" font-size="11" fill="#d100d1" letter-spacing="2">SCOTT-006 // MANAGEMENT</text>
+                                    <text x="25" y="420" font-family="'Syncopate', sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="2">BOOKINGS</text>
+                                    <text x="25" y="455" font-family="'Work Sans', sans-serif" font-weight="600" font-size="11" fill="#7b00ff" letter-spacing="1">CLUB SLOTS, FESTIVALS & PRIVATE EVENTS</text>
+                                    <circle cx="250" cy="250" r="235" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.04"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- 3D Flightcase Physical Outer Walls (Front & Sides) -->
+                    <div class="crate-front-panel">
+                        <div class="crate-corner corner-fl"></div>
+                        <div class="crate-corner corner-fr"></div>
+                        <div class="crate-latch"></div>
+                        <span class="crate-badge">SCOTT EBBZ LONDON — FLIGHTCASE</span>
+                    </div>
+                    <div class="crate-left-panel"></div>
+                    <div class="crate-right-panel"></div>
+
+                </div>
+
+            </div>
+        </section>
 
         <!-- Bio Section -->
         <section id="bio" class="info-section">
             <div class="glass-container glow-border">
-                <h2 class="section-title glitch-hover" data-text="BIOGRAPHY">BIOGRAPHY</h2>
+                <h2 class="section-title">BIOGRAPHY</h2>
                 <div class="bio-content">
                     <p>Hailing from the heart of the capital, <strong>DJ Scott Ebbz London</strong> brings a distinctive blend of driving basslines, atmospheric soundscapes, and high-energy house rhythms to dance floors across the UK.</p>
 
@@ -75,14 +328,14 @@
         <!-- Cyber House Party Spotlight Section -->
         <section id="chp-spotlight" class="info-section">
             <div class="glass-container glow-border">
-                <h2 class="section-title glitch-hover" data-text="CYBER HOUSE PARTY">CYBER HOUSE PARTY</h2>
+                <h2 class="section-title">CYBER HOUSE PARTY</h2>
                 <div class="bio-content">
                     <p>Scott’s involvement with <strong>Cyber House Party (CHP)</strong> since October 2020 spans both the creative and musical sides of the initiative—starting with graphic design, motion graphics, and merchandise coordination before stepping up to DJ voluntarily.</p>
                     
                     <p>Born as a volunteer-led, not-for-profit initiative, CHP bridges the gap between the UK cyber security community, mental health awareness, and dance music. By throwing high-energy virtual and live events, the movement unites professionals and music lovers alike while channeling vital energy and donations directly into UK charities.</p>
                 </div>
                 <div class="platform-links" style="margin-top: 25px;">
-                    <a href="https://cyberhouseparty.com/" target="_blank" class="platform-btn primary-platform glitch-hover" data-text="DISCOVER CYBER HOUSE PARTY">
+                    <a href="https://cyberhouseparty.com/" target="_blank" class="platform-btn primary-platform">
                         <i class="fa-solid fa-shield-halved"></i> DISCOVER CYBER HOUSE PARTY
                     </a>
                 </div>
@@ -92,15 +345,15 @@
         <!-- Music Section -->
         <section id="music" class="info-section">
             <div class="glass-container glow-border">
-                <h2 class="section-title glitch-hover" data-text="LATEST SETS">LATEST SETS</h2>
+                <h2 class="section-title">LATEST SETS</h2>
                 <div class="player-container">
                     <iframe width="100%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=0&feed=%2FScott_EBBZ_London%2F2-hours-of-house-dj-scott-ebbz-london%2F" frameborder="0"></iframe>
                 </div>
                 <div class="platform-links">
-                    <a href="mixes.html" class="platform-btn primary-platform glitch-hover" data-text="VIEW ALL MIXES ARCHIVE">
+                    <a href="mixes.html" class="platform-btn primary-platform">
                         <i class="fa-solid fa-headphones"></i> VIEW ALL MIXES ARCHIVE
                     </a>
-                    <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" class="platform-btn secondary-platform glitch-hover" data-text="FOLLOW ON MIXCLOUD">
+                    <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" class="platform-btn secondary-platform">
                         <i class="fa-brands fa-mixcloud"></i> FOLLOW ON MIXCLOUD
                     </a>
                 </div>
@@ -110,13 +363,13 @@
         <!-- FME Radio Direct Action Section -->
         <section id="fme-radio" class="info-section">
             <div class="glass-container glow-border">
-                <h2 class="section-title glitch-hover" data-text="FME RADIO HASTINGS">FME RADIO HASTINGS</h2>
+                <h2 class="section-title">FME RADIO HASTINGS</h2>
                 <div class="bio-content" style="text-align: center; margin-bottom: 25px;">
                     <p>Catch <strong>The Hastings House Party</strong> live every Friday from 9 PM to 11 PM. Tune in directly for the live stream NOW.</p>
                 </div>
 
                 <div class="fme-direct-action-box">
-                    <a href="https://live365.com/station/The-She-Radio---Hastings-a12925" target="_blank" class="fme-massive-btn glitch-hover" data-text="LISTEN TO FME RADIO HASTINGS NOW">
+                    <a href="https://live365.com/station/The-She-Radio---Hastings-a12925" target="_blank" class="fme-massive-btn">
                         <span class="live-dot-pulse"></span>
                         <span>LISTEN TO FME RADIO HASTINGS NOW</span>
                     </a>
@@ -127,12 +380,12 @@
         <!-- Upcoming Dates Section -->
         <section id="dates" class="info-section">
             <div class="glass-container glow-border">
-                <h2 class="section-title glitch-hover" data-text="UPCOMING DATES">UPCOMING DATES</h2>
+                <h2 class="section-title">UPCOMING DATES</h2>
                 <div class="gig-list">
                     <div class="gig-item">
                         <span class="gig-date">EVERY FRIDAY 9PM - 11PM</span>
                         <span class="gig-venue">The Hastings House Party — FME Radio Hastings</span>
-                        <a href="https://live365.com/station/The-She-Radio---Hastings-a12925" target="_blank" class="gig-btn glitch-hover" data-text="TUNE IN">TUNE IN</a>
+                        <a href="https://live365.com/station/The-She-Radio---Hastings-a12925" target="_blank" class="gig-btn primary-platform">TUNE IN</a>
                     </div>
                 </div>
             </div>
@@ -141,10 +394,10 @@
         <!-- Booking Section -->
         <section id="booking" class="info-section">
             <div class="glass-container glow-border">
-                <h2 class="section-title glitch-hover" data-text="BOOKING & ENQUIRIES">BOOKING & ENQUIRIES</h2>
+                <h2 class="section-title">BOOKING & ENQUIRIES</h2>
                 <div class="booking-form">
                     <p>For club bookings, festival slots, and private event enquiries:</p>
-                    <a href="mailto:djscottebbzlondon@gmail.com?subject=BOOKING%20ENQUIRY" class="cta-button glitch-hover" data-text="SEND BOOKING REQUEST">SEND BOOKING REQUEST</a>
+                    <a href="mailto:djscottebbzlondon@gmail.com?subject=BOOKING%20ENQUIRY" class="cta-button">SEND BOOKING REQUEST</a>
                 </div>
             </div>
         </section>
@@ -152,10 +405,10 @@
         <!-- Footer -->
         <footer class="main-footer">
             <div class="footer-socials">
-                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-mixcloud"></i></a>
-                <a href="https://soundcloud.com" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-soundcloud"></i></a>
-                <a href="https://instagram.com" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="glitch-hover" data-text=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank"><i class="fa-brands fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
             <p>&copy; 2026 DJ Scott Ebbz London. All Rights Reserved.</p>
         </footer>
@@ -168,10 +421,10 @@
             <div class="eq-bars" id="eq-indicator">
                 <span></span><span></span><span></span><span></span>
             </div>
-            <span class="track-title glitch-hover" data-text="SCOTT EBBZ LIVE">SCOTT EBBZ LIVE</span>
+            <span class="track-title">SCOTT EBBZ LIVE</span>
         </div>
         <div class="audio-controls">
-            <button id="bar-play-btn" aria-label="Play or Pause" class="glitch-hover" data-text=""><i class="fa-solid fa-play"></i></button>
+            <button id="bar-play-btn" aria-label="Play or Pause"><i class="fa-solid fa-play"></i></button>
             <input type="range" id="bar-volume" min="0" max="1" step="0.05" value="0.8">
         </div>
     </div>
@@ -202,7 +455,7 @@
 
         function animateCanvas() {
             ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+            ctx.fillStyle = 'rgba(255, 199, 44, 0.4)';
             
             particles.forEach(p => {
                 ctx.beginPath();
@@ -263,14 +516,46 @@
         function updatePlayState(isPlaying) {
             if (isPlaying) {
                 barPlayBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-                barPlayBtn.setAttribute('data-text', '');
                 eqIndicator.classList.add('playing');
             } else {
                 barPlayBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                barPlayBtn.setAttribute('data-text', '');
                 eqIndicator.classList.remove('playing');
             }
         }
+
+        // Crate Vertical Scrolling Control
+        const crateBay = document.getElementById('crate-bay');
+        const recordSleeves = document.querySelectorAll('.stacked-record-sleeve');
+        const scrollThumb = document.getElementById('scroll-thumb');
+        let currentFocus = 0;
+        const totalRecords = recordSleeves.length;
+
+        function updateCrateFocus(index) {
+            currentFocus = Math.max(0, Math.min(totalRecords - 1, index));
+            recordSleeves.forEach((sleeve, idx) => {
+                if (idx === currentFocus) {
+                    sleeve.classList.add('active-focus');
+                } else {
+                    sleeve.classList.remove('active-focus');
+                }
+            });
+            const pct = (currentFocus / (totalRecords - 1)) * 80;
+            if (scrollThumb) {
+                scrollThumb.style.top = pct + '%';
+            }
+        }
+
+        crateBay.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY > 0) {
+                updateCrateFocus(currentFocus + 1);
+            } else {
+                updateCrateFocus(currentFocus - 1);
+            }
+        }, { passive: false });
+
+        document.querySelector('.scroll-up').addEventListener('click', () => updateCrateFocus(currentFocus - 1));
+        document.querySelector('.scroll-down').addEventListener('click', () => updateCrateFocus(currentFocus + 1));
     </script>
 </body>
 </html>

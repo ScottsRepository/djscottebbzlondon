@@ -206,7 +206,7 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
    3D ISOMETRIC OPEN FLIGHTCASE RECORD CRATE WITH ARTWORK SLEEVES
    ========================================================================== */
 .crate-section-wrapper {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
     text-align: center;
 }
 
@@ -225,7 +225,7 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
     gap: 40px;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 /* Left Vertical Scroll Control Track */
@@ -279,7 +279,7 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 .flightcase-3d-crate {
     position: relative;
     width: 420px;
-    height: 260px;
+    height: 280px;
     perspective: 1200px;
     transform-style: preserve-3d;
 }
@@ -287,7 +287,7 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 /* Dark Interior Back of Crate */
 .crate-interior-back {
     position: absolute;
-    top: -50px; left: 20px; right: 20px;
+    top: 20px; left: 20px; right: 20px;
     height: 180px;
     background: linear-gradient(180deg, #020202 0%, #111111 100%);
     border: 2px solid #222222;
@@ -300,8 +300,8 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 /* Record Stack Bay */
 .crate-records-stack {
     position: absolute;
-    top: -100px; left: 0; right: 0;
-    height: 340px;
+    top: 10px; left: 0; right: 0;
+    height: 260px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -311,13 +311,13 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 /* Individual Packed Vinyl Sleeve */
 .stacked-record-sleeve {
     position: absolute;
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
     text-decoration: none;
     transform: translate3d(
-        calc(var(--index) * 12px), 
-        calc(var(--index) * -10px), 
-        calc(var(--index) * -25px)
+        calc(var(--index) * 10px), 
+        calc(var(--index) * -8px), 
+        calc(var(--index) * -20px)
     );
     z-index: calc(20 - var(--index));
     transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.25), box-shadow 0.4s ease, filter 0.4s ease;
@@ -349,7 +349,7 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 /* HOVER ANIMATION: Record Lifts Higher UP Clear of the Front Wall */
 .stacked-record-sleeve:hover,
 .stacked-record-sleeve.active-focus {
-    transform: translate3d(-15px, -170px, 90px) rotate(-3deg) !important;
+    transform: translate3d(-10px, -130px, 80px) rotate(-3deg) !important;
     z-index: 50 !important;
     filter: brightness(1) !important;
 }
@@ -364,7 +364,7 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 .crate-front-panel {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 140px;
+    height: 90px;
     background: linear-gradient(180deg, #222222 0%, #0a0a0a 100%);
     border: 3px solid #333333;
     border-radius: 4px 4px 10px 10px;
@@ -377,18 +377,18 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 
 .crate-corner {
     position: absolute;
-    width: 20px; height: 20px;
+    width: 16px; height: 16px;
     background: radial-gradient(circle, #888 0%, #333 70%, #111 100%);
     border: 1px solid #111;
     border-radius: 3px;
 }
-.corner-fl { bottom: -4px; left: -4px; }
-.corner-fr { bottom: -4px; right: -4px; }
+.corner-fl { bottom: -3px; left: -3px; }
+.corner-fr { bottom: -3px; right: -3px; }
 
 .crate-latch {
     position: absolute;
-    top: 15px;
-    width: 24px; height: 38px;
+    top: 10px;
+    width: 20px; height: 30px;
     background: linear-gradient(180deg, #777 0%, #222 100%);
     border: 1px solid #111;
     border-radius: 3px;
@@ -396,18 +396,18 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 
 .crate-badge {
     font-family: 'Syncopate', sans-serif;
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     color: var(--amber-primary);
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     font-weight: 700;
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 /* Flightcase Side Panels */
 .crate-left-panel {
     position: absolute;
-    bottom: 0; left: -15px;
-    width: 20px; height: 140px;
+    bottom: 0; left: -12px;
+    width: 16px; height: 90px;
     background: #151515;
     border-left: 2px solid #333333;
     transform: skewY(-25deg);
@@ -416,8 +416,8 @@ h1, h2, h3, .splash-title, .section-title, .track-title, .crate-instruction-titl
 
 .crate-right-panel {
     position: absolute;
-    bottom: 0; right: -15px;
-    width: 20px; height: 140px;
+    bottom: 0; right: -12px;
+    width: 16px; height: 90px;
     background: #151515;
     border-right: 2px solid #333333;
     transform: skewY(25deg);

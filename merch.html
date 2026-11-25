@@ -69,8 +69,35 @@
         .merch-desc {
             font-size: 0.95rem;
             line-height: 1.5;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             opacity: 0.9;
+        }
+
+        .size-picker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .size-picker label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #ffc72c;
+        }
+
+        .size-picker select {
+            background: rgba(10, 10, 13, 0.95);
+            color: #ffffff;
+            border: 1px solid rgba(255, 199, 44, 0.45);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
         }
 
         .merch-note {
@@ -124,7 +151,7 @@
             <div class="glass-container glow-border">
                 <h1 class="section-title">OFFICIAL MERCH</h1>
                 <div class="bio-content" style="text-align: center;">
-                    <p>Official <strong>DJ Scott Ebbz London</strong> apparel, fulfilled on demand in the UK with direct checkout via Stripe.</p>
+                    <p>Rep <strong>DJ Scott Ebbz London</strong> from the record crate to the dance floor. Limited-run SEL apparel printed on demand and shipped across the UK with fast, secure Stripe checkout.</p>
                 </div>
 
                 <div class="merch-grid">
@@ -135,12 +162,25 @@
                                 <img src="images/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-black-front-2-6b06e2a4b90c7.png" alt="DJ Scott Ebbz London T-Shirt">
                             </div>
                             <h2 class="merch-title">T-Shirt</h2>
-                            <div class="merch-price">£29.99</div>
-                            <p class="merch-desc">A high-quality DJ Scott Ebbz London T-shirt. Checkout collects your name and UK delivery address.</p>
+                            <div class="merch-price" id="tshirt-price-display">£29.99</div>
+                            <p class="merch-desc">Heavyweight boxy black tee front-printed with the bold white SEL emblem. Built for late sessions, club nights, and everyday wear.</p>
+                            <div class="size-picker">
+                                <label for="tshirt-size-select">Size</label>
+                                <select id="tshirt-size-select">
+                                    <option value="XS">XS (£29.99)</option>
+                                    <option value="S">S (£29.99)</option>
+                                    <option value="M" selected>M (£29.99)</option>
+                                    <option value="L">L (£29.99)</option>
+                                    <option value="XL">XL (£29.99)</option>
+                                    <option value="2XL">2XL (£29.99)</option>
+                                    <option value="3XL">3XL (£29.99)</option>
+                                    <option value="4XL">4XL (£29.99)</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="platform-links">
-                            <a href="https://buy.stripe.com/eVq9ASemU1FpfkOeHqgrS00" target="_blank" rel="noopener noreferrer" class="platform-btn primary-platform">
-                                <i class="fa-solid fa-bag-shopping"></i> BUY T-SHIRT — £29.99
+                            <a id="tshirt-buy-btn" href="https://buy.stripe.com/eVq9ASemU1FpfkOeHqgrS00" target="_blank" rel="noopener noreferrer" class="platform-btn primary-platform">
+                                <i class="fa-solid fa-bag-shopping"></i> BUY T-SHIRT (M) — £29.99
                             </a>
                         </div>
                     </article>
@@ -152,18 +192,31 @@
                                 <img src="images/unisex-premium-pullover-hoodie-black-back-6b06e21a3d1e8.png" alt="DJ Scott Ebbz London Hoodie">
                             </div>
                             <h2 class="merch-title">DJ Scott Ebbz London Hoodie</h2>
-                            <div class="merch-price">£39.99</div>
-                            <p class="merch-desc">A high-quality cotton hoodie branded for DJ Scott Ebbz London. Checkout collects your name and UK delivery address.</p>
+                            <div class="merch-price" id="hoodie-price-display">£39.99</div>
+                            <p class="merch-desc">Stealth black pullover hoodie featuring the signature SEL back print and sleeve detailing. Made to keep the warmth going from after-hours to cold UK nights.</p>
+                            <div class="size-picker">
+                                <label for="hoodie-size-select">Size</label>
+                                <select id="hoodie-size-select">
+                                    <option value="XS">XS (£39.99)</option>
+                                    <option value="S">S (£39.99)</option>
+                                    <option value="M" selected>M (£39.99)</option>
+                                    <option value="L">L (£39.99)</option>
+                                    <option value="XL">XL (£39.99)</option>
+                                    <option value="2XL">2XL (£39.99)</option>
+                                    <option value="3XL">3XL (£49.99)</option>
+                                    <option value="4XL">4XL (£49.99)</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="platform-links">
-                            <a href="https://buy.stripe.com/aFa14m1A85VF7Sm8j2grS01" target="_blank" rel="noopener noreferrer" class="platform-btn primary-platform">
-                                <i class="fa-solid fa-bag-shopping"></i> BUY HOODIE — £39.99
+                            <a id="hoodie-buy-btn" href="https://buy.stripe.com/aFa14m1A85VF7Sm8j2grS01" target="_blank" rel="noopener noreferrer" class="platform-btn primary-platform">
+                                <i class="fa-solid fa-bag-shopping"></i> BUY HOODIE (M) — £39.99
                             </a>
                         </div>
                     </article>
                 </div>
 
-                <p class="merch-note">Need help with an order or sizing question? <a href="mailto:djscottebbzlondon@gmail.com?subject=MERCH%20ENQUIRY">Email DJ Scott Ebbz London</a>.</p>
+                <p class="merch-note">Select your preferred size above before checking out. Questions about sizing or an order? <a href="mailto:djscottebbzlondon@gmail.com?subject=MERCH%20ENQUIRY">Email DJ Scott Ebbz London</a>.</p>
             </div>
         </section>
 
@@ -181,6 +234,60 @@
     </div>
 
     <script>
+        const tshirtPrices = {
+            "XS":  "£29.99",
+            "S":   "£29.99",
+            "M":   "£29.99",
+            "L":   "£29.99",
+            "XL":  "£29.99",
+            "2XL": "£29.99",
+            "3XL": "£29.99",
+            "4XL": "£29.99"
+        };
+
+        const hoodiePrices = {
+            "XS":  "£39.99",
+            "S":   "£39.99",
+            "M":   "£39.99",
+            "L":   "£39.99",
+            "XL":  "£39.99",
+            "2XL": "£39.99",
+            "3XL": "£49.99",
+            "4XL": "£49.99"
+        };
+
+        const tshirtCheckoutUrl = "https://buy.stripe.com/eVq9ASemU1FpfkOeHqgrS00";
+        const hoodieCheckoutUrl = "https://buy.stripe.com/aFa14m1A85VF7Sm8j2grS01";
+
+        const tshirtSizeSelect = document.getElementById('tshirt-size-select');
+        const tshirtPriceDisplay = document.getElementById('tshirt-price-display');
+        const tshirtBuyBtn = document.getElementById('tshirt-buy-btn');
+
+        const hoodieSizeSelect = document.getElementById('hoodie-size-select');
+        const hoodiePriceDisplay = document.getElementById('hoodie-price-display');
+        const hoodieBuyBtn = document.getElementById('hoodie-buy-btn');
+
+        function syncTshirtVariant() {
+            const chosenSize = tshirtSizeSelect.value;
+            const chosenPrice = tshirtPrices[chosenSize] || "£29.99";
+            tshirtPriceDisplay.textContent = chosenPrice;
+            tshirtBuyBtn.href = tshirtCheckoutUrl;
+            tshirtBuyBtn.innerHTML = `<i class="fa-solid fa-bag-shopping"></i> BUY T-SHIRT (${chosenSize}) — ${chosenPrice}`;
+        }
+
+        function syncHoodieVariant() {
+            const chosenSize = hoodieSizeSelect.value;
+            const chosenPrice = hoodiePrices[chosenSize] || "£39.99";
+            hoodiePriceDisplay.textContent = chosenPrice;
+            hoodieBuyBtn.href = hoodieCheckoutUrl;
+            hoodieBuyBtn.innerHTML = `<i class="fa-solid fa-bag-shopping"></i> BUY HOODIE (${chosenSize}) — ${chosenPrice}`;
+        }
+
+        tshirtSizeSelect.addEventListener('change', syncTshirtVariant);
+        hoodieSizeSelect.addEventListener('change', syncHoodieVariant);
+        syncTshirtVariant();
+        syncHoodieVariant();
+
         const canvas = document.getElementById('ambient-canvas');
         const ctx = canvas.getContext('2d');
         let width, height, particles;

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch | DJ Scott Ebbz London</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 25px;
+        }
+
+        .merch-card {
+            background: rgba(15, 15, 18, 0.75);
+            border: 1px solid rgba(255, 199, 44, 0.25);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .merch-mockup-frame {
+            background: rgba(8, 8, 10, 0.9);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .merch-mockup-frame img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .merch-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .merch-price {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffc72c;
+            margin-bottom: 12px;
+        }
+
+        .merch-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .merch-note {
+            margin-top: 24px;
+            font-size: 0.9rem;
+            opacity: 0.85;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Ambient Canvas & Background Layers -->
+    <canvas id="ambient-canvas"></canvas>
+    <div class="chroma-background"></div>
+    <div class="vignette-overlay"></div>
+
+    <!-- Main Site Container -->
+    <div class="content-wrapper">
+
+        <!-- Header / Navigation -->
+        <header class="hero-section">
+            <div class="logo-box">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="DJ Scott Ebbz London" class="sel-logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#bio">BIO</a></li>
+                    <li><a href="index.html#chp-spotlight">CHP</a></li>
+                    <li><a href="mixes.html">MIXES</a></li>
+                    <li><a href="merch.html">MERCH</a></li>
+                    <li><a href="index.html#fme-radio">FME RADIO</a></li>
+                    <li><a href="index.html#dates">DATES</a></li>
+                    <li><a href="index.html#booking">BOOKING</a></li>
+                </ul>
+            </nav>
+
+            <div class="hero-socials">
+                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank" aria-label="Mixcloud"><i class="fa-brands fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com" target="_blank" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </header>
+
+        <!-- Merch Section -->
+        <section id="merch" class="info-section">
+            <div class="glass-container glow-border">
+                <h1 class="section-title">OFFICIAL MERCH</h1>
+                <div class="bio-content" style="text-align: center;">
+                    <p>Official <strong>DJ Scott Ebbz London</strong> apparel, fulfilled on demand in the UK with direct checkout via Stripe.</p>
+                </div>
+
+                <div class="merch-grid">
+                    <!-- T-Shirt -->
+                    <article class="merch-card">
+                        <div>
+                            <div class="merch-mockup-frame">
+                                <img src="images/unisex-organic-oversized-high-neck-blaster-2.0-t-shirt-black-front-2-6b06e2a4b90c7.png" alt="DJ Scott Ebbz London T-Shirt">
+                            </div>
+                            <h2 class="merch-title">T-Shirt</h2>
+                            <div class="merch-price">£29.99</div>
+                            <p class="merch-desc">A high-quality DJ Scott Ebbz London T-shirt. Checkout collects your name and UK delivery address.</p>
+                        </div>
+                        <div class="platform-links">
+                            <a href="https://buy.stripe.com/eVq9ASemU1FpfkOeHqgrS00" target="_blank" rel="noopener noreferrer" class="platform-btn primary-platform">
+                                <i class="fa-solid fa-bag-shopping"></i> BUY T-SHIRT — £29.99
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Hoodie -->
+                    <article class="merch-card">
+                        <div>
+                            <div class="merch-mockup-frame">
+                                <img src="images/unisex-premium-pullover-hoodie-black-back-6b06e21a3d1e8.jpg" alt="DJ Scott Ebbz London Hoodie">
+                            </div>
+                            <h2 class="merch-title">DJ Scott Ebbz London Hoodie</h2>
+                            <div class="merch-price">£39.99</div>
+                            <p class="merch-desc">A high-quality cotton hoodie branded for DJ Scott Ebbz London. Checkout collects your name and UK delivery address.</p>
+                        </div>
+                        <div class="platform-links">
+                            <a href="https://buy.stripe.com/aFa14m1A85VF7Sm8j2grS01" target="_blank" rel="noopener noreferrer" class="platform-btn primary-platform">
+                                <i class="fa-solid fa-bag-shopping"></i> BUY HOODIE — £39.99
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="merch-note">Need help with an order or sizing question? <a href="mailto:djscottebbzlondon@gmail.com?subject=MERCH%20ENQUIRY">Email DJ Scott Ebbz London</a>.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-socials">
+                <a href="https://www.mixcloud.com/Scott_EBBZ_London/" target="_blank"><i class="fa-brands fa-mixcloud"></i></a>
+                <a href="https://soundcloud.com" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <p>© 2026 DJ Scott Ebbz London. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const canvas = document.getElementById('ambient-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 60; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2 + 1,
+                    speedY: Math.random() * -0.5 - 0.2,
+                    opacity: Math.random() * 0.5 + 0.2
+                });
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = 'rgba(255, 199, 44, 0.4)';
+
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+                p.y += p.speedY;
+                if (p.y < 0) {
+                    p.y = height;
+                    p.x = Math.random() * width;
+                }
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animateCanvas();
+    </script>
+</body>
+</html>
